@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function DaThuc(n){
+        this.n = n
+        this.heSo = [];
+        this.NhapDaThuc = function (){
+            for (let i=n;i>=0;i--){
+                this.heSo[i] = prompt("Nhập vào hệ số bậc " +i);
+            }
+        }
+        this.InDaThuc = function (){
+            let str = ""
+            for (let i=n;i>=1;i--){
+                str += this.heSo[i] + "^x" + i + "+"
+
+            }
+            str += this.heSo[0];
+            return str
+        }
+
+    }
+    let n = prompt("Nhập vào bậc đa thức ");
+    let dt = new DaThuc(n);
+    dt.NhapDaThuc();
+    document.write(dt.InDaThuc())
+</script>
+</body>
+</html>
